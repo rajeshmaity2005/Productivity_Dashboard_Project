@@ -1,10 +1,6 @@
-/*
-* Prefixed by https://autoprefixer.github.io
-* PostCSS: v8.4.14,
-* Autoprefixer: v10.4.7
-* Browsers: last 4 version
-*/
+My 1st Version Of DashBoard
 
+CSS:-
 :root {
     --pri: #FCDEC0;
     --sec: #2a1700;
@@ -38,8 +34,7 @@
 * {
     margin: 0;
     padding: 0;
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
+    box-sizing: border-box;
     color: white;
     font-family: aeonik;
     color: var(--pri);
@@ -73,15 +68,9 @@ section.allElems {
     background-position: bottom;
     margin-bottom: 40px;
     border-radius: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     padding: 30px 50px;
 }
 
@@ -119,14 +108,9 @@ header .header2 h3 {
 }
 
 .allElems .allFeatures {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-wrap: wrap;
+    align-items: flex-start;
     gap: 40px;
 }
 
@@ -138,12 +122,9 @@ header .header2 h3 {
     font-size: 30px;
     overflow: hidden;
     position: relative;
-    -webkit-transition: all ease 0.2s;
-    -o-transition: all ease 0.2s;
     transition: all ease 0.2s;
     cursor: pointer;
-    -webkit-box-shadow: 0px 1px 20px var(--black2);
-            box-shadow: 0px 1px 20px var(--black2);
+    box-shadow: 0px 1px 20px var(--black2);
     text-shadow: 0px 0px 5px var(--black2);
     cursor: pointer;
 }
@@ -151,10 +132,8 @@ header .header2 h3 {
 .elem img {
     height: 100%;
     width: 100%;
-    -o-object-fit: cover;
-       object-fit: cover;
-    -o-object-position: center;
-       object-position: center;
+    object-fit: cover;
+    object-position: center;
 }
 
 .elem h2 {
@@ -189,8 +168,6 @@ header .header2 h3 {
     border: none;
     font-size: 25px;
     font-weight: 700;
-    -webkit-transition: all ease 0.01s;
-    -o-transition: all ease 0.01s;
     transition: all ease 0.01s;
 }
 
@@ -206,15 +183,9 @@ header .header2 h3 {
     height: 80%;
     width: 100%;
     margin-top: 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .todo-list-fullpage .todo-container .addTask {
@@ -232,16 +203,9 @@ header .header2 h3 {
 }
 
 .todo-list-fullpage .todo-container .addTask form {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    flex-direction: column;
+    align-items: flex-start;
     padding: 30px;
 }
 
@@ -280,8 +244,6 @@ header .header2 h3 {
     outline: none;
     margin-bottom: 20px;
     color: var(--pri);
-    -webkit-transition: all ease 0.3s;
-    -o-transition: all ease 0.3s;
     transition: all ease 0.3s;
 }
 
@@ -294,30 +256,17 @@ header .header2 h3 {
     height: 100%;
     background-color: var(--tri2);
     border-radius: 20px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    flex-direction: column;
+    align-items: center;
     padding: 30px;
     overflow: auto;
 }
 
 .task {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     width: 100%;
     background-color: var(--pri);
     padding: 12px 20px;
@@ -328,12 +277,8 @@ header .header2 h3 {
 .task h5 {
     color: var(--sec);
     font-size: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
+    align-items: flex-start;
     gap: 5px;
 }
 
@@ -369,15 +314,9 @@ header .header2 h3 {
 }
 
 .mark-imp {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
     width: 100%;
     padding: 10px 10px;
     margin-bottom: 20px;
@@ -407,27 +346,16 @@ header .header2 h3 {
     width: 100%;
     border-radius: 10px;
     padding: 30px;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-    -webkit-box-align: start;
-        -ms-flex-align: start;
-            align-items: flex-start;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
     overflow: auto;
 }
 
 .daily-planner-fullpage .day-planner .day-planner-time {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     position: relative;
     width: 49%;
     margin-bottom: 15px;
@@ -457,15 +385,9 @@ header .header2 h3 {
 .motivation-fullPage-container {
     height: 100%;
     width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .motivational-fullpage .motivation-container {
@@ -484,8 +406,7 @@ header .header2 h3 {
     border-radius: 50px;
     scale: 1.15;
     z-index: 8;
-    -webkit-filter: blur(150px);
-            filter: blur(150px);
+    filter: blur(150px);
 }
 
 .motivational-fullpage .motivation-container .motivation-wrapper {
@@ -501,8 +422,6 @@ header .header2 h3 {
     background-color: var(--tri2);
     padding: 30px;
     border-radius: 20px;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
 
 }
@@ -513,15 +432,9 @@ header .header2 h3 {
 }
 
 .motivation-2 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
+    align-items: center;
+    justify-content: flex-start;
     margin-top: 30px;
 }
 
@@ -532,15 +445,9 @@ header .header2 h3 {
 }
 
 .motivation-3 {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
+    align-items: center;
+    justify-content: flex-end;
     margin-top: 30px;
 }
 
@@ -551,8 +458,6 @@ header .header2 h3 {
     background-color: var(--tri2);
     padding: 30px;
     border-radius: 20px;
-    width: -webkit-fit-content;
-    width: -moz-fit-content;
     width: fit-content;
 }
 
@@ -573,9 +478,7 @@ header .header2 h3 {
     position: absolute;
     top: 45%;
     left: 50%;
-    -webkit-transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
     text-align: center;
 }
 
@@ -592,18 +495,14 @@ header .header2 h3 {
     font-size: 30px;
     border-radius: 5px;
     border: none;
-    -webkit-box-shadow: 5px 5px 0px var(--black);
-            box-shadow: 5px 5px 0px var(--black);
-    -webkit-transition: all ease 0.1s;
-    -o-transition: all ease 0.1s;
+    box-shadow: 5px 5px 0px var(--black);
     transition: all ease 0.1s;
     font-weight: 700;
 }
 
 
 .pomo-timer button:active {
-    -webkit-box-shadow: 0px 0px 0px var(--black);
-            box-shadow: 0px 0px 0px var(--black);
+    box-shadow: 0px 0px 0px var(--black);
     scale: 0.97;
 }
 
@@ -611,9 +510,7 @@ header .header2 h3 {
     position: absolute;
     top: 20%;
     left: 50%;
-    -webkit-transform: translate(-50%, 0%);
-        -ms-transform: translate(-50%, 0%);
-            transform: translate(-50%, 0%);
+    transform: translate(-50%, 0%);
     background-color: var(--green);
     padding: 15px 30px;
     border-radius: 5px;
@@ -628,16 +525,10 @@ nav {
 }
 
 .nav-in {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     background-color: var(--tri2);
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    align-items: center;
+    justify-content: space-between;
     padding: 10px 30px;
     border-radius: 10px;
 }
@@ -652,8 +543,6 @@ nav {
     background-color: var(--pri);
     padding: 10px 12px;
     border-radius: 10px;
-    -webkit-transition: all ease 0.2s;
-    -o-transition: all ease 0.2s;
     transition: all ease 0.2s;
     cursor: pointer;
 }
