@@ -1,0 +1,674 @@
+My 2nd Version Of DashBoard
+
+CSS:-
+
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+:root {
+    --pri: #FCDEC0;
+    --sec: #2a1700;
+    --tri1: #ffab35;
+    --tri2: #64451f68;
+    --red: red;
+    --green: rgb(0, 167, 56);
+    --blue: rgb(0, 191, 255);
+    --black: black;
+    --black2: rgba(0, 0, 0, 0.507);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 200;
+    src: url(./AeonikTRIAL-Light.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 700;
+    src: url(./AeonikTRIAL-Bold.otf);
+}
+
+@font-face {
+    font-family: aeonik;
+    font-weight: 500;
+    src: url(./AeonikTRIAL-Regular.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    color: white;
+    font-family: aeonik;
+    color: var(--pri);
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#main {
+    height: 120%;
+    width: 100%;
+    background-color: var(--sec);
+}
+
+section.allElems {
+    height: 100%;
+    width: 100%;
+    padding: 40px;
+    overflow: auto;
+    position: absolute;
+}
+
+.allElems header {
+    /* height: 400px; */
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1631078858276-c0aee4562ab3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+    background-size: cover;
+    background-position: bottom;
+    margin-bottom: 40px;
+    border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 30px 50px;
+}
+
+header .header1 h1 {
+    font-size: 80px;
+    margin-bottom: 120px;
+}
+
+header .header1 h2 {
+    font-size: 30px;
+    font-weight: 500;
+}
+
+header .header1 h4 {
+    font-size: 40px;
+    font-weight: 500;
+}
+
+header .header2 h2 {
+    font-size: 60px;
+    font-weight: 700;
+}
+
+header .header2 h4 {
+    margin-top: -10px;
+    margin-bottom: 40px;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+header .header2 h3 {
+    font-size: 20px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.allElems .allFeatures {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 40px;
+}
+
+.elem {
+    height: 400px;
+    width: 330px;
+    background-color: var(--tri1);
+    border-radius: 10px;
+    font-size: 30px;
+    overflow: hidden;
+    position: relative;
+    -webkit-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+    cursor: pointer;
+    -webkit-box-shadow: 0px 1px 20px var(--black2);
+            box-shadow: 0px 1px 20px var(--black2);
+    text-shadow: 0px 0px 5px var(--black2);
+    cursor: pointer;
+}
+
+.elem img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    -o-object-position: center;
+       object-position: center;
+}
+
+.elem h2 {
+    position: absolute;
+    bottom: 4%;
+    right: 5%;
+    font-weight: 300;
+    font-size: 35px;
+}
+
+.elem:active {
+    scale: 0.97;
+}
+
+.fullElem {
+    height: 100%;
+    width: 100%;
+    background-color: var(--sec);
+    padding: 40px;
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 999;
+}
+
+.back {
+    position: absolute;
+    right: 5%;
+    background-color: var(--red);
+    border-radius: 8px;
+    padding: 14px 30px;
+    border: none;
+    font-size: 25px;
+    font-weight: 700;
+    -webkit-transition: all ease 0.01s;
+    -o-transition: all ease 0.01s;
+    transition: all ease 0.01s;
+}
+
+.back:active {
+    scale: 0.97;
+}
+
+.todo-list-fullpage h2 {
+    font-size: 65px;
+}
+
+.todo-list-fullpage .todo-container {
+    height: 80%;
+    width: 100%;
+    margin-top: 40px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+}
+
+.todo-list-fullpage .todo-container .addTask {
+    width: 33%;
+    height: 100%;
+    background-color: var(--tri2);
+    border-radius: 20px;
+}
+
+.todo-list-fullpage .todo-container .allTask {
+    width: 65%;
+    height: 100%;
+    background-color: var(--tri2);
+    border-radius: 20px;
+}
+
+.todo-list-fullpage .todo-container .addTask form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 30px;
+}
+
+.todo-container .addTask form input#task-input {
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 28px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.todo-container .addTask form textarea {
+    padding: 15px 25px;
+    width: 100%;
+    height: 290px;
+    font-size: 28px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.todo-container .addTask form button {
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 26px;
+    background-color: var(--tri1);
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    color: var(--pri);
+    -webkit-transition: all ease 0.3s;
+    -o-transition: all ease 0.3s;
+    transition: all ease 0.3s;
+}
+
+.todo-container .addTask form button:active {
+    scale: 0.96;
+}
+
+.todo-list-fullpage .todo-container .allTask {
+    width: 65%;
+    height: 100%;
+    background-color: var(--tri2);
+    border-radius: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 30px;
+    overflow: auto;
+}
+
+.task {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+    background-color: var(--pri);
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.task h5 {
+    color: var(--sec);
+    font-size: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    gap: 5px;
+}
+
+.task h5 span {
+    background-color: var(--red);
+    color: var(--pri);
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 50px;
+    font-size: 11px;
+}
+
+.task h5 span.true {
+    opacity: 1;
+}
+
+.task h5 span.false {
+    opacity: 0;
+}
+
+.task button {
+    padding: 15px 30px;
+    color: var(--pri);
+    background-color: var(--green);
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+}
+
+.task button:active {
+    scale: 0.97;
+}
+
+.mark-imp {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    width: 100%;
+    padding: 10px 10px;
+    margin-bottom: 20px;
+    gap: 30px;
+}
+
+.mark-imp input {
+    scale: 1.7;
+}
+
+.mark-imp label {
+    font-size: 20px;
+}
+
+.daily-planner-fullpage {
+    /* display: block; */
+}
+
+.daily-planner-fullpage h2 {
+    font-size: 70px;
+}
+
+.daily-planner-fullpage .day-planner {
+    background-color: var(--tri2);
+    height: 85%;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    overflow: auto;
+}
+
+.daily-planner-fullpage .day-planner .day-planner-time {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    position: relative;
+    width: 49%;
+    margin-bottom: 15px;
+}
+
+.day-planner .day-planner-time p {
+    position: absolute;
+    top: 12%;
+    left: 1%;
+    font-size: 16px;
+    font-weight: 200;
+    color: var(--tri1);
+}
+
+.day-planner .day-planner-time input {
+    padding: 20px 45px;
+    width: 100%;
+    background-color: var(--sec);
+    border-radius: 5px;
+    border: none;
+    font-size: 35px;
+    padding-top: 34px;
+    outline: none;
+    font-weight: 200;
+}
+
+.motivation-fullPage-container {
+    height: 100%;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+}
+
+.motivational-fullpage .motivation-container {
+    height: 500px;
+    width: 60%;
+    border-radius: 50px;
+    position: relative;
+}
+
+.motivational-fullpage .motivation-container::after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: var(--tri1);
+    border-radius: 50px;
+    scale: 1.15;
+    z-index: 8;
+    -webkit-filter: blur(150px);
+            filter: blur(150px);
+}
+
+.motivational-fullpage .motivation-container .motivation-wrapper {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    background-color: var(--tri1);
+    border-radius: 30px;
+    padding: 17px;
+}
+
+.motivation-1 {
+    background-color: var(--tri2);
+    padding: 30px;
+    border-radius: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+
+}
+
+.motivation-1 h2 {
+    font-size: 40px;
+    /* font-weight: 500; */
+}
+
+.motivation-2 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    margin-top: 30px;
+}
+
+.motivation-2 h1 {
+    font-size: 40px;
+    color: var(--sec);
+    font-weight: 500;
+}
+
+.motivation-3 {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.motivation-3 h2 {
+    font-size: 40px;
+    /* font-weight: 500; */
+    text-align: right;
+    background-color: var(--tri2);
+    padding: 30px;
+    border-radius: 20px;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+}
+
+.motivational-fullpage .motivation-container .motivation-wrapper img {
+    position: absolute;
+    right: 5%;
+    top: 5%;
+    opacity: 0.2;
+    height: 120px;
+    color: var(--sec);
+}
+
+.pomodoro-fullpage h2 {
+    font-size: 50px;
+}
+
+.pomodoro-fullpage .pomo-timer {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.pomo-timer h1 {
+    font-size: 170px;
+    font-weight: 500;
+}
+
+
+.pomo-timer button {
+    background-color: var(--tri2);
+    padding: 15px 40px;
+    margin: 10px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: none;
+    -webkit-box-shadow: 5px 5px 0px var(--black);
+            box-shadow: 5px 5px 0px var(--black);
+    -webkit-transition: all ease 0.1s;
+    -o-transition: all ease 0.1s;
+    transition: all ease 0.1s;
+    font-weight: 700;
+}
+
+
+.pomo-timer button:active {
+    -webkit-box-shadow: 0px 0px 0px var(--black);
+            box-shadow: 0px 0px 0px var(--black);
+    scale: 0.97;
+}
+
+.pomodoro-fullpage .session {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, 0%);
+        -ms-transform: translate(-50%, 0%);
+            transform: translate(-50%, 0%);
+    background-color: var(--green);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 30px;
+}
+
+nav {
+    height: 60px;
+    width: 100%;
+    margin-bottom: 30px;
+    padding: 30px 40px;
+}
+
+.nav-in {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: var(--tri2);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 10px 30px;
+    border-radius: 10px;
+}
+
+.nav-in h2{
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.theme {
+
+    background-color: var(--pri);
+    padding: 10px 12px;
+    border-radius: 10px;
+    -webkit-transition: all ease 0.2s;
+    -o-transition: all ease 0.2s;
+    transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.theme h4 {
+    color: var(--sec);
+    font-size: 20px;
+    font-weight: 700;
+    pointer-events: none;
+}
+
+.theme:active{
+    scale: 0.96;
+}
