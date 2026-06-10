@@ -32,6 +32,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: white;
     font-family: aeonik;
     color: var(--pri);
 }
@@ -40,36 +41,40 @@ html,
 body {
     height: 100%;
     width: 100%;
-    overflow: hidden;
-}
-
-body {
-    background-color: var(--sec);
 }
 
 #main {
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    /* padding: 20px 40px; */
     background-color: var(--sec);
     overflow: hidden;
-    position: relative;
+    display: grid;
+    grid-template-rows: 80px 1fr;
+
+    grid-template-areas:
+        "top"
+        "bottom"
+    ;
 }
 
 nav {
-    height: 100px;
+    padding: 20px 40px;
+    grid-area: top;
+    /* height: 60px; */
     width: 100%;
-    padding: 10px 40px;
+    /* margin-bottom: 30px; */
+    /* padding: 30px 40px; */
+    align-content: center;
 }
 
 .nav-in {
-    height: 100%;
-    width: 100%;
-    background-color: var(--tri2);
-    border-radius: 12px;
     display: flex;
+    background-color: var(--tri2);
     align-items: center;
     justify-content: space-between;
-    padding: 0 25px;
+    padding: 10px 30px;
+    border-radius: 10px;
 }
 
 .nav-in h2 {
@@ -78,259 +83,360 @@ nav {
 }
 
 .theme {
+
     background-color: var(--pri);
-    padding: 12px 18px;
+    padding: 10px 12px;
     border-radius: 10px;
-    cursor: pointer;
     transition: all ease 0.2s;
+    cursor: pointer;
+}
+
+.theme h4 {
+    color: var(--sec);
+    font-size: 20px;
+    font-weight: 700;
+    pointer-events: none;
 }
 
 .theme:active {
     scale: 0.96;
 }
 
-.theme h4 {
-    color: var(--sec);
-    font-size: 18px;
-    font-weight: 700;
-}
-
 section.allElems {
-    height: calc(100vh - 80px);
-    width: 100%;
+    grid-area: bottom;
+
+
     padding: 20px 40px;
-    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1.2fr 1fr;
+    grid-template-areas:
+        "header header"
+        "card card"
+    ;
+    gap: 10px;
 }
 
 .allElems header {
-    height: 42%;
-    width: 100%;
-    border-radius: 20px;
-    padding: 30px 50px;
-    margin-bottom: 25px;
+    grid-area: header;
 
-    background-image: url(https://images.unsplash.com/photo-1631078858276-c0aee4562ab3?q=80&w=1170&auto=format&fit=crop);
+    width: 100%;
+    background-image: url(https://images.unsplash.com/photo-1631078858276-c0aee4562ab3?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
     background-size: cover;
     background-position: bottom;
-
+    border-radius: 20px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
-
-header .header1 h2 {
-    font-size: 28px;
-    font-weight: 500;
+    padding: 30px 50px;
 }
 
 header .header1 h1 {
-    font-size: 75px;
-    margin: 30px 0 100px 0;
-    line-height: 1;
+    font-size: 80px;
+    margin-bottom: 120px;
 }
 
-header .header1 h4 {
-    font-size: 35px;
+header .header1 h2 {
+    font-size: 30px;
     font-weight: 500;
 }
 
-header .header2 {
-    text-align: right;
+header .header1 h4 {
+    font-size: 40px;
+    font-weight: 500;
 }
 
 header .header2 h2 {
-    font-size: 70px;
+    font-size: 60px;
     font-weight: 700;
 }
 
 header .header2 h4 {
+    margin-top: -10px;
+    margin-bottom: 40px;
     font-size: 40px;
-    margin-bottom: 35px;
+    font-weight: 500;
 }
 
 header .header2 h3 {
     font-size: 20px;
+    font-weight: 500;
     opacity: 0.8;
 }
 
-.allFeatures {
-    height: calc(58% - 25px);
-    width: 100%;
+
+.allElems .allFeatures {
+    grid-area: card;
+
+
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    gap: 20px;
+    gap: 40px;
 }
 
 .elem {
-    flex: 1;
-    height: 100%;
-    border-radius: 15px;
+    height: 350px;
+    width: 330px;
+    background-color: var(--tri1);
+    border-radius: 10px;
+    font-size: 30px;
     overflow: hidden;
     position: relative;
-    cursor: pointer;
     transition: all ease 0.2s;
-    box-shadow: 0px 0px 20px var(--black2);
-}
-
-.elem:active {
-    scale: 0.97;
+    cursor: pointer;
+    box-shadow: 0px 1px 20px var(--black2);
+    text-shadow: 0px 0px 5px var(--black2);
 }
 
 .elem img {
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: center;
 }
 
 .elem h2 {
     position: absolute;
-    bottom: 5%;
+    bottom: 4%;
     right: 5%;
-    font-size: 32px;
     font-weight: 300;
-    text-shadow: 0px 0px 10px black;
+    font-size: 35px;
+}
+
+.elem:active {
+    scale: 0.97;
 }
 
 .fullElem {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
+    height: 100%;
     width: 100%;
     background-color: var(--sec);
-    z-index: 999;
-    display: none;
-    overflow: hidden;
     padding: 40px;
+    display: none;
+    position: absolute;
+    top: 0;
+    z-index: 999;
 }
 
 .back {
     position: absolute;
-    top: 30px;
-    right: 40px;
-    padding: 12px 24px;
+    right: 5%;
     background-color: var(--red);
-    border: none;
     border-radius: 8px;
-    font-size: 22px;
+    padding: 14px 30px;
+    border: none;
+    font-size: 25px;
     font-weight: 700;
-    cursor: pointer;
+    transition: all ease 0.01s;
 }
 
-.todo-list-fullpage h2,
-.daily-planner-fullpage h2,
-.pomodoro-fullpage h2 {
-    font-size: 55px;
+.back:active {
+    scale: 0.97;
 }
 
-.todo-container {
-    height: calc(100% - 120px);
+.todo-list-fullpage h2 {
+    font-size: 65px;
+}
+
+.todo-list-fullpage .todo-container {
+    height: 80%;
     width: 100%;
-    margin-top: 30px;
+    margin-top: 40px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
 }
 
-.addTask {
+.todo-list-fullpage .todo-container .addTask {
     width: 33%;
     height: 100%;
     background-color: var(--tri2);
     border-radius: 20px;
 }
 
-.allTask {
+.todo-list-fullpage .todo-container .allTask {
     width: 65%;
     height: 100%;
     background-color: var(--tri2);
     border-radius: 20px;
-    overflow-y: auto;
-    padding: 20px;
 }
 
-.addTask form {
+.todo-list-fullpage .todo-container .addTask form {
     display: flex;
     flex-direction: column;
-    padding: 25px;
+    align-items: flex-start;
+    padding: 30px;
 }
 
-.addTask form input,
-.addTask form textarea {
+.todo-container .addTask form input#task-input {
+    padding: 15px 25px;
     width: 100%;
+    font-size: 28px;
     background-color: var(--pri);
     color: var(--sec);
+    border-radius: 5px;
     border: none;
     outline: none;
-    border-radius: 8px;
     margin-bottom: 20px;
-    padding: 18px 20px;
-    font-size: 24px;
 }
 
-.addTask form textarea {
-    height: 250px;
-    resize: none;
-}
-
-.addTask form button {
-    padding: 18px;
+.todo-container .addTask form textarea {
+    padding: 15px 25px;
+    width: 100%;
+    height: 290px;
+    font-size: 28px;
+    background-color: var(--pri);
+    color: var(--sec);
+    border-radius: 5px;
     border: none;
-    border-radius: 8px;
+    outline: none;
+    margin-bottom: 20px;
+}
+
+.todo-container .addTask form button {
+    padding: 15px 25px;
+    width: 100%;
+    font-size: 26px;
     background-color: var(--tri1);
-    font-size: 24px;
-    font-weight: 700;
-    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    color: var(--pri);
+    transition: all ease 0.3s;
+}
+
+.todo-container .addTask form button:active {
+    scale: 0.96;
+}
+
+.todo-list-fullpage .todo-container .allTask {
+    width: 65%;
+    height: 100%;
+    background-color: var(--tri2);
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px;
+    overflow: auto;
+}
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    background-color: var(--pri);
+    padding: 12px 20px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.task h5 {
+    color: var(--sec);
+    font-size: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 5px;
+}
+
+.task h5 span {
+    background-color: var(--red);
+    color: var(--pri);
+    font-size: 10px;
+    padding: 4px 8px;
+    border-radius: 50px;
+    font-size: 11px;
+}
+
+.task h5 span.true {
+    opacity: 1;
+}
+
+.task h5 span.false {
+    opacity: 0;
+}
+
+.task button {
+    padding: 15px 30px;
+    color: var(--pri);
+    background-color: var(--green);
+    font-size: 18px;
+    border-radius: 5px;
+    border: none;
+    font-weight: 600;
+}
+
+.task button:active {
+    scale: 0.97;
 }
 
 .mark-imp {
     display: flex;
     align-items: center;
-    gap: 20px;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 10px 10px;
     margin-bottom: 20px;
+    gap: 30px;
 }
 
 .mark-imp input {
-    scale: 1.5;
+    scale: 1.7;
 }
 
 .mark-imp label {
     font-size: 20px;
 }
 
-.daily-planner-fullpage .day-planner {
-    margin-top: 30px;
-    height: calc(100% - 120px);
-    width: 100%;
-    background-color: var(--tri2);
-    border-radius: 20px;
-    padding: 25px;
-    overflow-y: auto;
+.daily-planner-fullpage h2 {
+    font-size: 70px;
+}
 
+.daily-planner-fullpage .day-planner {
+    background-color: var(--tri2);
+    height: 85%;
+    margin-top: 40px;
+    width: 100%;
+    border-radius: 10px;
+    padding: 30px;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    align-items: flex-start;
+    justify-content: space-between;
+    overflow: auto;
 }
 
-.day-planner-time {
-    width: 49%;
+.daily-planner-fullpage .day-planner .day-planner-time {
+    display: flex;
+    align-items: center;
     position: relative;
+    width: 49%;
+    margin-bottom: 15px;
 }
 
-.day-planner-time p {
+.day-planner .day-planner-time p {
     position: absolute;
-    top: 10px;
-    left: 20px;
+    top: 12%;
+    left: 1%;
+    font-size: 16px;
+    font-weight: 200;
     color: var(--tri1);
 }
 
-.day-planner-time input {
+.day-planner .day-planner-time input {
+    padding: 20px 45px;
     width: 100%;
-    padding: 35px 20px 18px 20px;
     background-color: var(--sec);
+    border-radius: 5px;
     border: none;
+    font-size: 35px;
+    padding-top: 34px;
     outline: none;
-    border-radius: 10px;
-    font-size: 28px;
+    font-weight: 200;
 }
 
 .motivation-fullPage-container {
@@ -341,71 +447,93 @@ header .header2 h3 {
     justify-content: center;
 }
 
-.motivation-container {
+.motivational-fullpage .motivation-container {
+    height: 500px;
     width: 60%;
-    background-color: var(--tri1);
-    border-radius: 30px;
-    padding: 30px;
+    border-radius: 50px;
     position: relative;
 }
 
-.motivation-wrapper img {
+.motivational-fullpage .motivation-container::after {
+    content: '';
+    height: 100%;
+    width: 100%;
     position: absolute;
-    top: 30px;
-    right: 30px;
-    height: 100px;
-    opacity: 0.2;
+    background-color: var(--tri1);
+    border-radius: 50px;
+    scale: 1.15;
+    z-index: 8;
+    filter: blur(150px);
 }
 
-.motivation-1,
-.motivation-3 h2 {
-    background-color: var(--tri2);
-    border-radius: 15px;
+.motivational-fullpage .motivation-container .motivation-wrapper {
+    z-index: 10;
+    position: absolute;
+    width: 100%;
+    background-color: var(--tri1);
+    border-radius: 30px;
+    padding: 17px;
 }
 
 .motivation-1 {
+    background-color: var(--tri2);
+    padding: 30px;
+    border-radius: 20px;
     width: fit-content;
-    padding: 20px 25px;
+
 }
 
 .motivation-1 h2 {
-    font-size: 35px;
+    font-size: 40px;
+    /* font-weight: 500; */
 }
 
 .motivation-2 {
-    margin: 40px 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 30px;
 }
 
 .motivation-2 h1 {
+    font-size: 40px;
     color: var(--sec);
-    font-size: 42px;
-    line-height: 1.4;
+    font-weight: 500;
 }
 
 .motivation-3 {
     display: flex;
+    align-items: center;
     justify-content: flex-end;
+    margin-top: 30px;
 }
 
 .motivation-3 h2 {
-    padding: 20px 25px;
-    font-size: 32px;
+    font-size: 40px;
+    /* font-weight: 500; */
+    text-align: right;
+    background-color: var(--tri2);
+    padding: 30px;
+    border-radius: 20px;
+    width: fit-content;
 }
 
-.pomodoro-fullpage .session {
+.motivational-fullpage .motivation-container .motivation-wrapper img {
     position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: var(--green);
-    padding: 12px 25px;
-    border-radius: 8px;
-    font-size: 28px;
+    right: 5%;
+    top: 5%;
+    opacity: 0.2;
+    height: 120px;
+    color: var(--sec);
 }
 
-.pomo-timer {
+.pomodoro-fullpage h2 {
+    font-size: 50px;
+}
+
+.pomodoro-fullpage .pomo-timer {
     position: absolute;
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -413,39 +541,70 @@ header .header2 h3 {
 
 .pomo-timer h1 {
     font-size: 170px;
-    margin-bottom: 20px;
+    font-weight: 500;
 }
+
 
 .pomo-timer button {
-    padding: 15px 35px;
-    margin: 8px;
-    border: none;
-    border-radius: 8px;
     background-color: var(--tri2);
-    font-size: 25px;
+    padding: 15px 40px;
+    margin: 10px;
+    font-size: 30px;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 5px 5px 0px var(--black);
+    transition: all ease 0.1s;
     font-weight: 700;
-    cursor: pointer;
 }
 
 
+.pomo-timer button:active {
+    box-shadow: 0px 0px 0px var(--black);
+    scale: 0.97;
+}
 
-
-
+.pomodoro-fullpage .session {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    background-color: var(--green);
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-size: 30px;
+}
 
 
 
 
 @media (max-width: 768px) {
 
-    nav {
+    html,
+    body {
+        height: 100%;
+        width: 100%;
+        overflow-x: hidden;
+    }
+
+    #main {
+        min-height: 100vh;
         height: auto;
+        overflow-y: auto;
+        grid-template-rows: auto 1fr;
+    }
+
+    /* ================= NAVBAR ================= */
+
+    nav {
         padding: 15px;
+        width: 100%;
     }
 
     .nav-in {
         flex-direction: column;
         gap: 15px;
-        padding: 15px;
+        padding: 20px;
+        border-radius: 15px;
     }
 
     .nav-in h2 {
@@ -456,214 +615,375 @@ header .header2 h3 {
     .theme {
         width: 100%;
         text-align: center;
-    }
-
-    section.allElems {
-        height: calc(100vh - 120px);
-        padding: 15px;
-        overflow-y: auto;
-    }
-
-    .allElems header {
-        height: auto;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 25px;
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-    header .header1 h2 {
-        font-size: 18px;
-    }
-
-    header .header1 h1 {
-        font-size: 38px;
-        margin: 15px 0 25px 0;
-        line-height: 1.1;
-    }
-
-    header .header1 h4 {
-        font-size: 22px;
-    }
-
-    header .header2 {
-        text-align: left;
-    }
-
-    header .header2 h2 {
-        font-size: 45px;
-    }
-
-    header .header2 h4 {
-        font-size: 24px;
-        margin-bottom: 10px;
-    }
-
-    header .header2 h3 {
-        font-size: 15px;
-    }
-
-    .allFeatures {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 12px;
-        height: auto;
-    }
-
-    .elem {
-        width: 100%;
-        height: 140px;
+        padding: 14px;
         border-radius: 12px;
     }
 
-    .elem img {
-        height: 100%;
+    .theme h4 {
+        font-size: 22px;
+    }
+
+    /* ================= MAIN SECTION ================= */
+
+    section.allElems {
+        padding: 15px;
+        grid-template-rows: 50vw auto;
+        gap: 10px;
+    }
+
+    /* ================= HEADER ================= */
+
+
+    .allElems .weather-info {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .allElems header {
+        max-height: 50vw;
+        padding: 40px 20px;
+        border-radius: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 15px;
+        overflow: hidden;
+    }
+
+    header .header1 {
         width: 100%;
-        object-fit: cover;
+        display: flex;
+        justify-content: space-between;
+        text-shadow: 0px 0px 7px var(--black2);
+    }
+
+    header .header1 h1 {
+        font-size: 5vw;
+        line-height: 1;
+        margin-bottom: 20px;
+        text-shadow: 0px 0px 7px var(--black2);
+    }
+
+    header .header1 h2 {
+        font-size: 4vw;
+        text-shadow: 0px 0px 7px var(--black2);
+    }
+
+    header .header1 h4 {
+        font-size: 2vw;
+        text-shadow: 0px 0px 7px var(--black2);
+    }
+
+    header .header2 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    header .header2 h2 {
+        font-size: 10vw;
+        margin-bottom: -10px;
+        text-shadow: 0px 0px 7px var(--black2);
+    }
+
+    header .header2 h4 {
+        font-size: 5vw;
+        margin: 0px 0px;
+        text-shadow: 0px 0px 7px var(--black2);
+    }
+
+    header .header2 h3 {
+        font-size: 3vw;
+        font-weight: 200;
+        opacity: 0.8;
+        text-shadow: 0px 0px 7px var(--black2);
+    }
+
+    /* ================= CARDS ================= */
+
+    .allElems .allFeatures {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+        align-items: start;
+        align-content: start;
+        margin-top: 0;
+    }
+
+
+    .elem {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        height: auto;
+        border-radius: 15px;
     }
 
     .elem h2 {
-        font-size: 14px;
+        left: 8%;
         bottom: 8%;
-        left: 5%;
         right: auto;
+        font-size: 3vw;
     }
 
+    /* ================= FULL PAGE ================= */
+
     .fullElem {
-        padding: 20px;
+        padding: 20px 15px;
         overflow-y: auto;
     }
 
     .back {
         top: 15px;
         right: 15px;
-        padding: 10px 16px;
         font-size: 16px;
+        padding: 10px 18px;
     }
 
-    .todo-list-fullpage h2,
-    .daily-planner-fullpage h2,
-    .pomodoro-fullpage h2 {
-        font-size: 30px;
+    /* ================= TODO ================= */
+
+    .todo-list-fullpage h2 {
+        font-size: 4.5vw;
         margin-top: 60px;
     }
 
-    .todo-container {
+    .todo-list-fullpage .todo-container {
         flex-direction: column;
         gap: 20px;
         height: auto;
     }
 
-    .addTask,
-    .allTask {
+    .todo-list-fullpage .todo-container .addTask,
+    .todo-list-fullpage .todo-container .allTask {
         width: 100%;
         height: auto;
     }
 
-    .addTask form {
+    .todo-list-fullpage .todo-container .addTask form,
+    .todo-list-fullpage .todo-container .allTask {
         padding: 18px;
     }
 
-    .addTask form input,
-    .addTask form textarea {
+    .todo-container .addTask form input#task-input {
         font-size: 18px;
-        padding: 15px;
+        padding: 14px 18px;
     }
 
-    .addTask form textarea {
+    .todo-container .addTask form textarea {
+        font-size: 18px;
+        padding: 14px 18px;
         height: 180px;
     }
 
-    .addTask form button {
+    .todo-container .addTask form button {
         font-size: 18px;
         padding: 14px;
     }
 
-    .mark-imp {
+    .task {
+        flex-direction: column;
+        align-items: flex-start;
         gap: 12px;
+    }
+
+    .task h5 {
+        font-size: 18px;
+    }
+
+    .task button {
+        width: 100%;
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .mark-imp {
+        gap: 15px;
     }
 
     .mark-imp label {
         font-size: 16px;
     }
 
-    .daily-planner-fullpage .day-planner {
-        height: auto;
-        padding: 15px;
-        flex-direction: column;
-        flex-wrap: nowrap;
+    /* ================= DAILY PLANNER ================= */
+
+    .daily-planner-fullpage h2 {
+        font-size: 4.5vw;
+        margin-top: 60px;
     }
 
-    .day-planner-time {
+    .daily-planner-fullpage .day-planner {
+        padding: 15px;
+        height: auto;
+    }
+
+    .daily-planner-fullpage .day-planner .day-planner-time {
         width: 100%;
     }
 
-    .day-planner-time p {
-        font-size: 13px;
+    .day-planner .day-planner-time p {
+        left: 4%;
+        top: 10%;
+        font-size: 12px;
     }
 
-    .day-planner-time input {
-        font-size: 18px;
-        padding: 28px 15px 15px 15px;
+    .day-planner .day-planner-time input {
+        font-size: 20px;
+        padding: 18px 20px;
+        padding-top: 30px;
     }
+
+    /* ================= MOTIVATION ================= */
 
     .motivation-fullPage-container {
         align-items: flex-start;
         padding-top: 80px;
     }
 
-    .motivation-container {
+    .motivational-fullpage .motivation-container {
         width: 100%;
-        padding: 20px;
+        height: auto;
     }
 
-    .motivation-wrapper img {
-        height: 55px;
-        top: 15px;
-        right: 15px;
+    .motivational-fullpage .motivation-container::after {
+        filter: blur(90px);
     }
 
-    .motivation-1 {
-        padding: 14px 16px;
+    .motivational-fullpage .motivation-container .motivation-wrapper {
+        position: relative;
+        padding: 14px;
     }
 
-    .motivation-1 h2 {
-        font-size: 20px;
-    }
-
-    .motivation-2 {
-        margin: 25px 0;
-    }
-
-    .motivation-2 h1 {
-        font-size: 24px;
-        line-height: 1.4;
-    }
-
+    .motivation-1,
     .motivation-3 h2 {
-        font-size: 18px;
-        padding: 12px 16px;
+        padding: 18px;
+        width: 100%;
+    }
+
+    .motivation-1 h2,
+    .motivation-2 h1,
+    .motivation-3 h2 {
+        font-size: 22px;
+    }
+
+    .motivation-2,
+    .motivation-3 {
+        margin-top: 15px;
+    }
+
+    .motivational-fullpage .motivation-container .motivation-wrapper img {
+        height: 70px;
+    }
+
+    /* ================= POMODORO ================= */
+
+    .pomodoro-fullpage h2 {
+        font-size: 4.5vw;
+        margin-top: 60px;
     }
 
     .pomodoro-fullpage .session {
         top: 18%;
         font-size: 18px;
-        padding: 10px 16px;
+        padding: 10px 18px;
+        width: max-content;
     }
 
-    .pomo-timer {
+    .pomodoro-fullpage .pomo-timer {
         width: 100%;
+        top: 52%;
+        padding: 0px 15px;
     }
 
     .pomo-timer h1 {
-        font-size: 75px;
+        font-size: 20vw;
+        margin-bottom: 10px;
     }
 
     .pomo-timer button {
-        width: 90%;
-        font-size: 18px;
+        width: 100%;
+        margin: 8px 0px;
         padding: 14px;
-        margin: 5px 0;
+        font-size: 18px;
+    }
+}
+
+/* ================= SMALL MOBILE ================= */
+
+@media (max-width: 480px) {
+
+    .allElems .allFeatures {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .elem h2 {
+        font-size: 3vw;
+    }
+
+    .allElems .weather-info {
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    .allElems header {
+        padding: 30px 20px;
+        border-radius: 20px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 15px;
+        overflow: hidden;
+    }
+
+    header .header1 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+
+    }
+
+    header .header1 h1 {
+        font-size: 5vw;
+        line-height: 1;
+        margin-bottom: 20px;
+    }
+
+    header .header1 h2 {
+        font-size: 3vw;
+    }
+
+    header .header1 h4 {
+        font-size: 3vw;
+    }
+
+    header .header2 {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+    }
+
+    header .header2 h2 {
+        font-size: 10vw;
+        margin-bottom: -10px;
+    }
+
+    header .header2 h4 {
+        font-size: 5vw;
+        margin: 0px 0px;
+    }
+
+    header .header2 h3 {
+        font-size: 3vw;
+        font-weight: 200;
+        opacity: 0.8;
+    }
+
+    .pomo-timer h1 {
+        font-size: 18vw;
     }
 }

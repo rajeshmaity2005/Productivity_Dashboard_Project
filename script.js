@@ -247,9 +247,9 @@ console.log(data);
         header1Date.innerHTML = `${taarikh} ${month} ${year}`
 
         if (hours > 12) {
-            header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} PM`
+            header1Time.innerHTML = `${dayOfWeek}, ${String(hours-12).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} PM`
         } else {
-            header1Time.innerHTML = `${dayOfWeek}, ${String(hours).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} AM`
+            header1Time.innerHTML = `${dayOfWeek}, ${String(hours-12).padStart('2', '0')}:${String(minutes).padStart('2', '0')}:${String(seconds).padStart('2', '0')} AM`
         }
     }
     setInterval(() => {
